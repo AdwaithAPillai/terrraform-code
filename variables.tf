@@ -28,11 +28,11 @@ variable "instance_type" {
 }
 
 variable "ssh_allowed_ip" {
-  default = "122.171.16.109/32"
+  default = "117.244.204.171/32"
 }
 
 variable "key_pair_name" {
   description = "The name of the key pair to use for SSH access"
   type        = string
-  default = "test_key"
+  default = "task_new"
 }
