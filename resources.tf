@@ -166,7 +166,7 @@ resource "aws_instance" "jump_host" {
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id     = aws_subnet.public1.id
-  security_groups = [aws_security_group.jump_host.id]
+  vpc_security_group_ids = [aws_security_group.jump_host.id]
   tags = {
     Name = "JumpHostInstance"
   }
@@ -177,7 +177,7 @@ resource "aws_instance" "ubuntu_server" {
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id     = aws_subnet.private.id
-  security_groups = [aws_security_group.ubuntu_server.id]
+  vpc_security_group_ids = [aws_security_group.ubuntu_server.id]
 
   user_data = <<-EOF
               #!/bin/bash
